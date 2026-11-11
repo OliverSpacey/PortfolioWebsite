@@ -14,11 +14,24 @@ function addListeners() {
             current_hovered = null
             console.log("Mouse out")
         })
+
+        disk.addEventListener("click", function() {
+            selectHovered()
+        })
     };
 }
 
 function debugPrint() {
     console.log("Debug fired")
+}
+
+function selectHovered() {
+    if (current_hovered) {
+        console.log(current_hovered)
+    }
+    else {
+        console.error("No disk hovered - cannot select")
+    }
 }
 
 addListeners()

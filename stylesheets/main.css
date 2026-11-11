@@ -37,12 +37,13 @@ header {
 
 .floppy-disk {
     display: flex;
+    flex-shrink: 0;
     background-image: linear-gradient(rgb(136, 32, 32), rgb(84, 40, 40));
     margin: 20px;
     padding: 20px;
     border-radius: 0 40px 0 0;
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
     flex-direction: column;
     justify-content: center;
     pointer-events: auto;
@@ -53,25 +54,26 @@ header {
     color: black;
     font-weight: bold;
     font-size: 28px;
-    width: 50%;
+    width: 60%;
     align-self: center;
     text-align: center;
     align-content: center;
-    height: 40%;
-    transform: translate(0, -34%);
+    height: 70%;
+    transform: translate(0, -50%);
 }
 
 .floppy-disk .content-area {
+    pointer-events: none;
     text-align: center;
     align-content: center;
     background-color: rgb(215, 210, 210);
     color: black;
-    font-size: 24px;
-    padding: 20px;
-    border-radius: 20px 20px 0 0;
-    height: 70%;
-    width: 80%;
-    transform: translate(0, 13.9%);
+    font-size: 18px;
+    padding: 0px;
+    border-radius: 10px 10px 0 0;
+    height: 180%;
+    width: 120%;
+    transform: translate(-8%, 27%);
 }
 
 .floppy-disk h2 {
@@ -82,13 +84,15 @@ header {
 .disk-display-area {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 50%;
+    /* flex-wrap: nowrap; */
+    overflow: auto;
+    width: 100%;
+
 }
 
 .content-selector-area {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .content {

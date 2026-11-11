@@ -12,3 +12,5 @@ function addListeners() {
 function selectDisk(disk) {
     console.log(disk)
 }
+
+addListeners()

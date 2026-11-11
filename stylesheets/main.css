@@ -58,8 +58,8 @@ header {
     align-self: center;
     text-align: center;
     align-content: center;
-    height: 70%;
-    transform: translate(0, -50%);
+    height: 40%;
+    transform: translate(0, -70%);
 }
 
 .floppy-disk .content-area {
@@ -71,7 +71,7 @@ header {
     font-size: 18px;
     padding: 0px;
     border-radius: 10px 10px 0 0;
-    height: 180%;
+    height: 100%;
     width: 120%;
     transform: translate(-8%, 27%);
 }
@@ -84,10 +84,17 @@ header {
 .disk-display-area {
     display: flex;
     flex-direction: row;
-    /* flex-wrap: nowrap; */
     overflow: auto;
     width: 100%;
+    justify-content: center;
+}
 
+
+#active-disk-slot {
+    display: block;
+    background-color: rgb(209, 210, 108);
+    height: 20px;
+    width: 200px;
 }
 
 .content-selector-area {
@@ -287,6 +294,10 @@ header h1 {
     .nav-item {
         font-size: 18px;
     }
+
+    .disk-display-area {
+        flex-wrap: wrap;
+    }
 }
 
 /* mobile styling */
@@ -297,5 +308,9 @@ header h1 {
 
     header p {
         font-size: 24px;
+    }
+    .disk-display-area {
+        flex-wrap: nowrap;
+        justify-content: start;
     }
 }

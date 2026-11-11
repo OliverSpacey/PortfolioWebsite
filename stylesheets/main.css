@@ -92,9 +92,21 @@ header {
 
 #active-disk-slot {
     display: block;
-    background-color: rgb(209, 210, 108);
+    height: 200px;
+    width: 150px;
+    overflow: hidden;
+}
+
+#active-slot-background {
+    display: block;
+    background-color: rgb(41, 41, 37);
     height: 20px;
-    width: 200px;
+}
+
+#active-disk-slot p {
+    color: black;
+    font-weight: bold;
+    margin: 0;
 }
 
 .content-selector-area {

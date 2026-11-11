@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<html>
 <head>
     <title>Oliver Spacey</title>
     <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+    <script src="../js/main.js"></script>
 </head>
-
+<!-- 
 <header>
     <div class="header-container">
         <ul class="nav-bar">
@@ -33,18 +35,122 @@
             </li>
         </ul>
     </div>
-</header>
+</header> -->
 
 <div class="scan-lines"></div>
 <div class="vignette"></div>
+
+<!-- <img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
+<img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
+<img class="cloud-image" src="../images/cloud_8.png" alt="Big Cloud" style="top: 30%; left: 25%; scale: 0.5;">
+<img class="cloud-image" src="../images/cloud_6.png" alt="Big Cloud" style="top: 40%; left: 35%; scale: 0.6;"> -->
+<!-- <img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
+<img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
+<img class="cloud-image" src="../images/cloud_8.png" alt="Big Cloud" style="top: 30%; left: 25%; scale: 0.5;">
+<img class="cloud-image" src="../images/cloud_6.png" alt="Big Cloud" style="top: 40%; left: 35%; scale: 0.6;">
+<img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
+<img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
+<img class="cloud-image" src="../images/cloud_8.png" alt="Big Cloud" style="top: 30%; left: 25%; scale: 0.5;">
+<img class="cloud-image" src="../images/cloud_6.png" alt="Big Cloud" style="top: 40%; left: 35%; scale: 0.6;">
+<img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
+<img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
+<img class="cloud-image" src="../images/cloud_8.png" alt="Big Cloud" style="top: 30%; left: 25%; scale: 0.5;">
+<img class="cloud-image" src="../images/cloud_6.png" alt="Big Cloud" style="top: 40%; left: 35%; scale: 0.6;">
+<img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
+<img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
+<img class="cloud-image" src="../images/cloud_8.png" alt="Big Cloud" style="top: 30%; left: 25%; scale: 0.5;">
+<img class="cloud-image" src="../images/cloud_6.png" alt="Big Cloud" style="top: 40%; left: 35%; scale: 0.6;">
+<img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
+<img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
+<img class="cloud-image" src="../images/cloud_8.png" alt="Big Cloud" style="top: 30%; left: 25%; scale: 0.5;">
+<img class="cloud-image" src="../images/cloud_6.png" alt="Big Cloud" style="top: 40%; left: 35%; scale: 0.6;">
+<img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
+<img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
+<img class="cloud-image" src="../images/cloud_8.png" alt="Big Cloud" style="top: 30%; left: 25%; scale: 0.5;">
+<img class="cloud-image" src="../images/cloud_6.png" alt="Big Cloud" style="top: 40%; left: 35%; scale: 0.6;"> -->
+<!-- <img class="cloud-image" src="../images/cloud_2.png" alt="Big Cloud" style="top: 50%; left: 45%; scale: 0.7;"> -->
 
 <img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
 <img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
 <img class="cloud-image" src="../images/cloud_8.png" alt="Big Cloud" style="top: 30%; left: 25%; scale: 0.5;">
 <img class="cloud-image" src="../images/cloud_6.png" alt="Big Cloud" style="top: 40%; left: 35%; scale: 0.6;">
-<!-- <img class="cloud-image" src="../images/cloud_2.png" alt="Big Cloud" style="top: 50%; left: 45%; scale: 0.7;"> -->
 
-<div class="content">
+<div class="content-selector-area">
+
+    <body class="default-page-background">
+        
+        <div class="disk-display-area">
+
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(5, 5, 66), rgb(2, 2, 46));">
+                <div class="top-decoration"></div>
+                <button class="top-decoration" onclick="addListeners()"></button>
+                <div class="content-area">
+                    <b>Who am I?</b>
+                </div>
+            </div>
+        
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(15, 66, 5), rgb(2, 32, 3));">
+                <div class="top-decoration"></div>
+                <div class="content-area">
+                    <b>Projects</b>
+                </div>
+            </div>
+
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(82, 80, 9), rgb(58, 65, 12));">
+                <div class="top-decoration"></div>
+                <div class="content-area">
+                    <b>Education</b>
+                </div>
+            </div>
+        
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(30, 149, 165), rgb(6, 93, 90));">
+                <div class="top-decoration"></div>
+                <div class="content-area">
+                    <b>Employment</b>
+                </div>
+            </div>
+
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(191, 40, 65), rgb(95, 6, 66));">
+                <div class="top-decoration"></div>
+                <div class="content-area">
+                    <b>Skills</b>
+                </div>
+            </div>
+        
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(181, 112, 22), rgb(117, 112, 4));">
+                <div class="top-decoration"></div>
+                <div class="content-area">
+                    <b>Interests</b>
+                </div>
+            </div>
+
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(130, 8, 178), rgb(55, 7, 70));">
+                <div class="top-decoration"></div>
+                <div class="content-area">
+                    <b>Travel</b>
+                </div>
+            </div>
+
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(38, 39, 37), rgb(85, 88, 85));">
+                <div class="top-decoration"></div>
+                <div class="content-area">
+                    <b>For recruiters</b>
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="content">
+            <p class="editorial-note">Select a disk to view</p>
+        </div>
+    
+    </body>
+</div>
+
+
+
+<!-- <div class="content">
     <body class="default-page-background">
         <h1>Who am I?</h1>
         <p>I am a University of Sheffield <a class="in-text-link" href="education.html">graduate</a>, with a 2.1 (Hons) Computer Science degree.</p>
@@ -57,4 +163,6 @@
 
         <p class="editorial-note">Maybe remove the top nav bar and replace with floppy disk slot that then opens a menu of floppy disks for each page to 'insert'.</p>
     </body>
-</div>
+</div> -->
+
+</html>

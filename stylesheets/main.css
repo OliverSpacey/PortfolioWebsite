@@ -41,10 +41,11 @@ header {
     margin: 20px;
     padding: 20px;
     border-radius: 0 40px 0 0;
-    height: 400px;
-    width: 400px;
+    height: 200px;
+    width: 200px;
     flex-direction: column;
     justify-content: center;
+    pointer-events: auto;
 }
 
 .floppy-disk .top-decoration {
@@ -56,24 +57,51 @@ header {
     align-self: center;
     text-align: center;
     align-content: center;
-    height: 20%;
-    transform: translate(0, -25%);
+    height: 40%;
+    transform: translate(0, -34%);
 }
 
 .floppy-disk .content-area {
+    text-align: center;
+    align-content: center;
     background-color: rgb(215, 210, 210);
     color: black;
     font-size: 24px;
     padding: 20px;
     border-radius: 20px 20px 0 0;
     height: 70%;
-    width: 90%;
-    transform: translate(0, 6.2%);
+    width: 80%;
+    transform: translate(0, 13.9%);
 }
 
 .floppy-disk h2 {
     font-size: 24px;
     margin-bottom: 10px;
+}
+
+.disk-display-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.content-selector-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    position: relative;
+    border: 5px solid #002513;
+    border-radius: 20px;
+    /* max-width: 800px; */
+    width: 50%;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgba(136, 135, 135, 0.343);
 }
 
 .non-technical-work-experience-cards {
@@ -210,17 +238,6 @@ html {
     /* scrollbar-gutter: stable; */
     scrollbar-width: none;
     /* scrollbar-color: #ebf385 #cac975; */
-}
-
-.content {
-    position: relative;
-    border: 5px solid #002513;
-    border-radius: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-size: 20px;
-    background-color: rgba(136, 135, 135, 0.343);
 }
 
 .nav-bar {

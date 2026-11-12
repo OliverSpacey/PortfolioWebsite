@@ -32,11 +32,14 @@ function selectDisk(disk, active_slot) {
     current_active = disk
     current_active_colour = disk.style.backgroundImage
 
+    const ghost_disk = document.getElementById("ghost-floppy-disk")
+    ghost_disk.style.display = "none"
+
     // Create a clone of the disk to place in the slot
     const disk_clone = disk.cloneNode(true)
     disk_clone.style.display = "flex"
     disk_clone.style.margin = "0"
-    disk_clone.style.transform = "translate(3.5%, -50%)"
+    disk_clone.style.animation = "insertDisk 1s forwards"
     active_slot.appendChild(disk_clone)
 
     // Hide elements and make it translucent black
@@ -67,6 +70,9 @@ function removeActiveDisk() {
         const active_slot = document.getElementById("active-disk-slot")
         const disk_clone = active_slot.getElementsByClassName("floppy-disk")[0]
         active_slot.removeChild(disk_clone)
+        
+        const ghost_disk = document.getElementById("ghost-floppy-disk")
+        ghost_disk.style.display = "flex"
     }
 }
 

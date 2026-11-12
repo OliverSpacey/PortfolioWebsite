@@ -1,31 +1,18 @@
 /* shared: */
 
+@keyframes insertDisk {
+    from {transform: translate(3.5%, 0%);}
+    to {transform: translate(3.5%, -62%);}
+}
+
 footer {
     z-index: 1000;
-    background-color: #2c2c2c;
+    background-color: #2c2c2c46;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 40px;
-}
-
-header {
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.header-container {
-    text-align: center;
-    /* background-color: #dbe36f; */
-    /* background-image: linear-gradient(to right, #ebf385, #cac975); */
-    background-image: radial-gradient(circle, #ebf385, #cac975);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
-    padding: 20px;
-    border-radius: 30px;
 }
 
 .technical-work-experience-cards {
@@ -46,7 +33,6 @@ header {
     width: 100px;
     flex-direction: column;
     justify-content: center;
-    pointer-events: auto;
 }
 
 .floppy-disk .top-decoration {
@@ -76,6 +62,47 @@ header {
     transform: translate(-8%, 27%);
 }
 
+#ghost-floppy-disk {
+    display: flex;
+    flex-shrink: 0;
+    background-image: linear-gradient(rgba(123, 122, 122, 0.254), rgba(176, 176, 176, 0.608));
+    animation: insertDisk 2.5s infinite;
+    margin: 0px;
+    padding: 20px;
+    border-radius: 0 40px 0 0;
+    height: 100px;
+    width: 100px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#ghost-floppy-disk .top-decoration {
+    background-color: rgba(161, 161, 161, 0.261);
+    color: black;
+    font-weight: bold;
+    font-size: 28px;
+    width: 60%;
+    align-self: center;
+    text-align: center;
+    align-content: center;
+    height: 40%;
+    transform: translate(0, -70%);
+}
+
+#ghost-floppy-disk .content-area {
+    pointer-events: none;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(215, 210, 210);
+    color: black;
+    font-size: 18px;
+    padding: 0px;
+    border-radius: 10px 10px 0 0;
+    height: 100%;
+    width: 120%;
+    transform: translate(-8%, 27%);
+}
+
 .floppy-disk h2 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -91,14 +118,14 @@ header {
 
 
 #active-disk-slot {
-    display: block;
+    align-self: center;
     height: 200px;
     width: 150px;
     overflow: hidden;
+    transform: translate(0, 10%);
 }
 
 #active-slot-background {
-    display: block;
     background-color: rgb(41, 41, 37);
     height: 20px;
 }
@@ -258,9 +285,7 @@ body {
 }
 
 html {
-    /* scrollbar-gutter: stable; */
     scrollbar-width: none;
-    /* scrollbar-color: #ebf385 #cac975; */
 }
 
 .nav-bar {

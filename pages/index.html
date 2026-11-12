@@ -12,6 +12,10 @@
 <div class="content-selector-area">
 
     <body id="page-background">
+
+        <div id="scroll-help">
+            <p>Scroll to see more disks</p>
+        </div>
         
         <div class="disk-display-area">
 
@@ -79,14 +83,16 @@
             <div id="ghost-floppy-disk">
                 <div class="top-decoration"></div>
                 <div class="content-area">
-                    <b>Insert disk</b>
+                    <b>Select a disk to insert it</b>
                 </div>
             </div>
         </div>
-        <div class="content">
-            <div id="default">
-                <p>Select a disk to insert it and view content.</p>
-            </div>
+        <div id="default">
+            <p>Select a disk to view its content.</p>
+        </div>
+        
+        <div id="disk-removal-tip"><p>Tap the disk again to remove.</p></div>
+        <div class="content" style="display: none;">
 
             <div id="whoami" style="display: none;">
                 <p>Only visible to whoami</p>
@@ -94,9 +100,6 @@
 
             <div id="projects" style="display: none;">
                 <h1>Projects</h1>
-                <!-- <p>Here are some of my projects:</p> -->
-                
-                <!-- <p class="editorial-note">Something to play with here. Even if only one project is showcased.</p> -->
 
                 <div class="project-card-list">
                     <div class="project-card">

@@ -44,6 +44,14 @@ function selectDisk(disk, active_slot) {
         fill: "forwards"
     });
 
+    //Show content div
+    document.getElementsByClassName("content")[0].animate([
+        {display: "block"}
+    ], {
+        delay: animation_delay_open_ms,
+        fill: "forwards"
+    })
+
     const disk_id = disk.dataset.infoId;
     if (disk_id) {
         const info_div = document.getElementById(disk.dataset.infoId)
@@ -66,6 +74,15 @@ function selectDisk(disk, active_slot) {
 
     const ghost_disk = document.getElementById("ghost-floppy-disk")
     ghost_disk.style.display = "none"
+
+
+    document.getElementById("disk-removal-tip").animate([
+        {display: "flex"}
+    ],{
+        delay: animation_delay_open_ms,
+        duration: 1,
+        fill: "forwards"
+    })
 
     // Add scan lines and vignette
     document.getElementById("scan-lines").animate([
@@ -127,9 +144,17 @@ function diskHoverExited(disk) {
 function removeActiveDisk() {
     if (current_active) {
 
+        //Hide content
+        document.getElementsByClassName("content")[0].animate([
+            {display: "none"}
+        ], {
+            delay: animation_delay_close_ms,
+            fill: "forwards"
+        })
+
         //Show the default info div instantly
         document.getElementById("default").animate([
-            {display: "block"}
+            {display: "flex"}
         ], {
             delay: animation_delay_close_ms,
             duration: 1,
@@ -146,6 +171,15 @@ function removeActiveDisk() {
                 fill: "forwards"
             });
         }
+
+        // Hide disk removal tip div
+        document.getElementById("disk-removal-tip").animate([
+            {display: "none"}
+        ],{
+            delay: animation_delay_close_ms,
+            duration: 1,
+            fill: "forwards"
+        })
 
         // Remove scan lines and vignette
         document.getElementById("scan-lines").animate([

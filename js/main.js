@@ -25,6 +25,8 @@ function addListeners() {
 }
 
 function selectDisk(disk, active_slot) {
+    if (disk == current_active) return
+
     // Get rid of the active disk, if any
     removeActiveDisk()
 

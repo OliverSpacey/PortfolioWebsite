@@ -127,11 +127,11 @@ function diskHoverExited(disk) {
 function removeActiveDisk() {
     if (current_active) {
 
-        //Show the default info div
+        //Show the default info div instantly
         document.getElementById("default").animate([
             {display: "block"}
         ], {
-            delay: animation_delay_open_ms,
+            delay: animation_delay_close_ms,
             duration: 1,
             fill: "forwards"
         });

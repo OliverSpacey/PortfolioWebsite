@@ -4,40 +4,9 @@
     <title>Oliver Spacey</title>
     <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
 </head>
-<!-- 
-<header>
-    <div class="header-container">
-        <ul class="nav-bar">
-            <li class="nav-item">
-                <a href="index.html">Who am I?</a>
-            </li>
-            <li class="nav-item">
-                <a href="projects.html">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a href="education.html">Education</a>
-            </li>
-            <li class="nav-item">
-                <a href="employment.html">Employment</a>
-            </li>
-            <li class="nav-item">
-                <a href="skills.html">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a href="interests.html">Interests</a>
-            </li>
-            <li class="nav-item">
-                <a href="travel.html">Travel</a>
-            </li>
-            <li class="nav-item">
-                <a href="recruiter.html">Recruiter</a>
-            </li>
-        </ul>
-    </div>
-</header> -->
 
-<div class="scan-lines"></div>
-<div class="vignette"></div>
+<div id="scan-lines" style="display:none;"></div>
+<div id="vignette" style="display:none;"></div>
 
 <!-- <img class="cloud-image" src="../images/cloud_1.png" alt="Big Cloud" style="top: 10%; left: 5%; scale: 0.3;">
 <img class="cloud-image" src="../images/cloud_7.png" alt="Big Cloud" style="top: 20%; left: 15%; scale: 0.4;">
@@ -76,62 +45,60 @@
 
 <div class="content-selector-area">
 
-    <body class="default-page-background">
-        <!-- <button onclick="addListeners()" style="height: 50px; width: 50%; align-self: center;"></button> -->
-
+    <body id="page-background">
         
         <div class="disk-display-area">
 
-            <div class="floppy-disk" style="background-image: linear-gradient(rgb(5, 5, 66), rgb(2, 2, 46));">
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(5, 5, 66), rgb(2, 2, 46)); background-color: rgb(5, 5, 66);">
                 <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>Who am I?</b>
                 </div>
             </div>
         
-            <div class="floppy-disk" style="background-image: linear-gradient(rgb(15, 66, 5), rgb(2, 32, 3));">
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(15, 66, 5), rgb(2, 32, 3)); background-color: rgb(15, 66, 5);">
                 <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>Projects</b>
                 </div>
             </div>
 
-            <div class="floppy-disk" style="background-image: linear-gradient(rgb(82, 80, 9), rgb(58, 65, 12));">
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(82, 80, 9), rgb(58, 65, 12)); background-color: rgb(82, 80, 9);">
                 <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>Education</b>
                 </div>
             </div>
         
-            <div class="floppy-disk" style="background-image: linear-gradient(rgb(30, 149, 165), rgb(6, 93, 90));">
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(30, 149, 165), rgb(6, 93, 90)); background-color: rgb(30, 149, 165);">
                 <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>Employment</b>
                 </div>
             </div>
 
-            <div class="floppy-disk" style="background-image: linear-gradient(rgb(191, 40, 65), rgb(95, 6, 66));">
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(191, 40, 65), rgb(95, 6, 66)); background-color: rgb(191, 40, 65);">
                 <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>Skills</b>
                 </div>
             </div>
         
-            <div class="floppy-disk" style="background-image: linear-gradient(rgb(181, 112, 22), rgb(117, 112, 4));">
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(181, 112, 22), rgb(117, 112, 4)); background-color: rgb(181, 112, 22);">
                 <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>Interests</b>
                 </div>
             </div>
 
-            <div class="floppy-disk" style="background-image: linear-gradient(rgb(130, 8, 178), rgb(55, 7, 70));">
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(130, 8, 178), rgb(55, 7, 70)); background-color: rgb(130, 8, 178);">
                 <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>Travel</b>
                 </div>
             </div>
 
-            <div class="floppy-disk" style="background-image: linear-gradient(rgb(38, 39, 37), rgb(85, 88, 85));">
+            <div class="floppy-disk" style="background-image: linear-gradient(rgb(38, 39, 37), rgb(85, 88, 85)); background-color: rgb(38, 39, 37);">
                 <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>For recruiters</b>
@@ -144,7 +111,7 @@
         <div id="active-disk-slot">
             <div id="active-slot-background"></div>
             <div id="ghost-floppy-disk">
-                <div class="top-decoration" style="background-color: rgba(161, 161, 161, 0.261);"></div>
+                <div class="top-decoration"></div>
                 <div class="content-area">
                     <b>Insert disk</b>
                 </div>

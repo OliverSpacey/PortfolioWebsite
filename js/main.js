@@ -35,6 +35,47 @@ function selectDisk(disk, active_slot) {
     const ghost_disk = document.getElementById("ghost-floppy-disk")
     ghost_disk.style.display = "none"
 
+    // Add scan lines and vignette
+    // const scan_line_div = document.getElementById("scan-lines")
+    // const vignette_div = document.getElementById("vignette")
+    // scan_line_div.style.display = "block"
+    // vignette_div.style.display = "block"
+
+    document.getElementById("scan-lines").animate([
+        {display: "block"}
+    ], {
+        delay: 500,
+        duration: 1,
+        fill: "forwards"
+    });
+    document.getElementById("vignette").animate([
+        {display: "block"}
+    ], {
+        delay: 500,
+        duration: 1,
+        fill: "forwards"
+    });
+
+
+    // Animate colour change to match the disk
+    // First go to black
+    document.getElementById("page-background").animate([
+        {backgroundColor: "#000"}
+    ], {
+        delay: 0,
+        duration: 50,
+        fill: "forwards"
+    });
+    // Then go to colour
+    document.getElementById("page-background").animate([
+        {backgroundColor: disk.style.backgroundColor}
+    ], {
+        delay: 500,
+        duration: 150,
+        fill: "forwards"
+    });
+
+
     // Create a clone of the disk to place in the slot
     const disk_clone = disk.cloneNode(true)
     disk_clone.style.display = "flex"
@@ -58,7 +99,35 @@ function diskHoverExited(disk) {
 
 function removeActiveDisk() {
     if (current_active) {
+        // Remove scan lines and vignette
+        // const scan_line_div = document.getElementById("scan-lines")
+        // const vignette_div = document.getElementById("vignette")
+        // scan_line_div.style.display = "none"
+        // vignette_div.style.display = "none"
+        document.getElementById("scan-lines").animate([
+            {display: "none"}
+        ], {
+            delay: 0,
+            duration: 50,
+            fill: "forwards"
+        });
+        document.getElementById("vignette").animate([
+            {display: "none"}
+        ], {
+            delay: 0,
+            duration: 50,
+            fill: "forwards"
+        });
+
         // Reset colour, and make all visible again
+        document.getElementById("page-background").animate([
+            {backgroundColor: "#000"}
+        ], {
+            delay: 0,
+            duration: 50,
+            fill: "forwards"
+        });
+
         current_active.style.backgroundImage = current_active_colour
         current_active.getElementsByClassName("top-decoration")[0].style.display = "block"
         current_active.getElementsByClassName("content-area")[0].style.display = "block"

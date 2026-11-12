@@ -1,5 +1,10 @@
-var current_active = null
-var current_active_colour = null
+var current_active = null;
+var current_active_colour = null;
+var visible_div = null;
+
+const animation_delay_open_ms = 500;
+const animation_delay_close_ms = 0;
+
 // Listen for mouse events on the floppy disks - if selected, display relevant content
 function addListeners() {
     const disks = document.getElementsByClassName("floppy-disk")
@@ -25,10 +30,35 @@ function addListeners() {
 }
 
 function selectDisk(disk, active_slot) {
-    if (disk == current_active) return
+    if (disk == current_active) return;
 
     // Get rid of the active disk, if any
     removeActiveDisk()
+
+    //Hide default text and display actual info
+    document.getElementById("default").animate([
+        {display: "none"}
+    ], {
+        delay: animation_delay_close_ms,
+        duration: 1,
+        fill: "forwards"
+    });
+
+    const disk_id = disk.dataset.infoId;
+    if (disk_id) {
+        const info_div = document.getElementById(disk.dataset.infoId)
+        if (info_div) {
+            // Change to animation?
+            info_div.animate([
+                {display: "block"}
+            ], {
+                delay: animation_delay_open_ms,
+                duration: 1,
+                fill: "forwards"
+            });
+            visible_div = info_div
+        }
+    }
 
     // Set new active
     current_active = disk
@@ -38,22 +68,17 @@ function selectDisk(disk, active_slot) {
     ghost_disk.style.display = "none"
 
     // Add scan lines and vignette
-    // const scan_line_div = document.getElementById("scan-lines")
-    // const vignette_div = document.getElementById("vignette")
-    // scan_line_div.style.display = "block"
-    // vignette_div.style.display = "block"
-
     document.getElementById("scan-lines").animate([
         {display: "block"}
     ], {
-        delay: 500,
+        delay: animation_delay_open_ms,
         duration: 1,
         fill: "forwards"
     });
     document.getElementById("vignette").animate([
         {display: "block"}
     ], {
-        delay: 500,
+        delay: animation_delay_open_ms,
         duration: 1,
         fill: "forwards"
     });
@@ -64,7 +89,7 @@ function selectDisk(disk, active_slot) {
     document.getElementById("page-background").animate([
         {backgroundColor: "#000"}
     ], {
-        delay: 0,
+        delay: animation_delay_close_ms,
         duration: 50,
         fill: "forwards"
     });
@@ -72,7 +97,7 @@ function selectDisk(disk, active_slot) {
     document.getElementById("page-background").animate([
         {backgroundColor: disk.style.backgroundColor}
     ], {
-        delay: 500,
+        delay: animation_delay_open_ms,
         duration: 150,
         fill: "forwards"
     });
@@ -101,22 +126,39 @@ function diskHoverExited(disk) {
 
 function removeActiveDisk() {
     if (current_active) {
+
+        //Show the default info div
+        document.getElementById("default").animate([
+            {display: "block"}
+        ], {
+            delay: animation_delay_open_ms,
+            duration: 1,
+            fill: "forwards"
+        });
+
+        // Hide info div
+        if (visible_div) {
+            visible_div.animate([
+                {display: "none"}
+            ], {
+                delay: animation_delay_close_ms,
+                duration: 1,
+                fill: "forwards"
+            });
+        }
+
         // Remove scan lines and vignette
-        // const scan_line_div = document.getElementById("scan-lines")
-        // const vignette_div = document.getElementById("vignette")
-        // scan_line_div.style.display = "none"
-        // vignette_div.style.display = "none"
         document.getElementById("scan-lines").animate([
             {display: "none"}
         ], {
-            delay: 0,
+            delay: animation_delay_close_ms,
             duration: 50,
             fill: "forwards"
         });
         document.getElementById("vignette").animate([
             {display: "none"}
         ], {
-            delay: 0,
+            delay: animation_delay_close_ms,
             duration: 50,
             fill: "forwards"
         });
@@ -125,7 +167,7 @@ function removeActiveDisk() {
         document.getElementById("page-background").animate([
             {backgroundColor: "#000"}
         ], {
-            delay: 0,
+            delay: animation_delay_close_ms,
             duration: 50,
             fill: "forwards"
         });
